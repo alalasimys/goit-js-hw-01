@@ -1,2 +1,2 @@
 # goit-js-hw-01
-JavaScript Homework #1
+JavaScript Homework with bot checking

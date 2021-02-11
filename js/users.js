@@ -8,7 +8,7 @@ export default [
     balance: 2811,
     skills: ["ipsum", "lorem"],
     gender: "male",
-    age: 37
+    age: 37,
   },
   {
     name: "Sharlene Bush",
@@ -19,7 +19,7 @@ export default [
     balance: 3821,
     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
     gender: "female",
-    age: 34
+    age: 34,
   },
   {
     name: "Ross Vazquez",
@@ -30,7 +30,7 @@ export default [
     balance: 3793,
     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
     gender: "male",
-    age: 24
+    age: 24,
   },
   {
     name: "Elma Head",
@@ -41,7 +41,7 @@ export default [
     balance: 2278,
     skills: ["adipisicing", "irure", "velit"],
     gender: "female",
-    age: 21
+    age: 21,
   },
   {
     name: "Carey Barr",
@@ -52,7 +52,7 @@ export default [
     balance: 3951,
     skills: ["ex", "culpa", "nostrud"],
     gender: "male",
-    age: 27
+    age: 27,
   },
   {
     name: "Blackburn Dotson",
@@ -63,7 +63,7 @@ export default [
     balance: 1498,
     skills: ["non", "amet", "ipsum"],
     gender: "male",
-    age: 38
+    age: 38,
   },
   {
     name: "Sheree Anthony",
@@ -74,6 +74,6 @@ export default [
     balance: 2764,
     skills: ["lorem", "veniam", "culpa"],
     gender: "female",
-    age: 39
-  }
+    age: 39,
+  },
 ];

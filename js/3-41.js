@@ -25,10 +25,15 @@ const atTheOldToad = {
     this.potions.push(potionName);
   },
   removePotion(potionName) {
-    this.potions = this.potions.filter((potion) => {
-      return potion.name !== potionName;
-    });
-    // console.log(this.potions);
+    // this.potions = this.potions.filter((potion) => {
+    //   return potion.name !== potionName;
+    // });
+    for (const potion of this.potions) {
+      if (potion.name === potionName) {
+        this.potions = this.potions.splice(this.potions.indexOf(potion), 1);
+      }
+    }
+    console.log(this.potions);
   },
   updatePotionName(oldName, newName) {
     for (const potion of this.potions) {
@@ -36,7 +41,7 @@ const atTheOldToad = {
         potion.name = newName;
       }
     }
-    console.log(this.potions);
+    // console.log(this.potions);
   },
   // Пиши код выше этой строки
 };

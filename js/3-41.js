@@ -28,12 +28,12 @@ const atTheOldToad = {
     // this.potions = this.potions.filter((potion) => {
     //   return potion.name !== potionName;
     // });
-    for (const potion of this.potions) {
+    for (let potion of this.potions) {
       if (potion.name === potionName) {
-        this.potions = this.potions.splice(this.potions.indexOf(potion), 1);
+        this.potions.splice(this.potions.indexOf(potion), 1);
       }
     }
-    console.log(this.potions);
+    return this.potions;
   },
   updatePotionName(oldName, newName) {
     for (const potion of this.potions) {
@@ -46,9 +46,9 @@ const atTheOldToad = {
   // Пиши код выше этой строки
 };
 
-atTheOldToad.addPotion({ name: "Невидимка", price: 620 });
-atTheOldToad.addPotion({ name: "Зелье силы", price: 270 });
-atTheOldToad.removePotion("Дыхание дракона");
-atTheOldToad.removePotion("Зелье скорости");
-atTheOldToad.updatePotionName("Дыхание дракона", "Полиморф");
-atTheOldToad.updatePotionName("Каменная кожа", "Зелье неуязвимости");
+// atTheOldToad.addPotion({ name: "Невидимка", price: 620 });
+// atTheOldToad.addPotion({ name: "Зелье силы", price: 270 });
+console.log(atTheOldToad.removePotion("Дыхание дракона"));
+console.log(atTheOldToad.removePotion("Зелье скорости"));
+// atTheOldToad.updatePotionName("Дыхание дракона", "Полиморф");
+// atTheOldToad.updatePotionName("Каменная кожа", "Зелье неуязвимости");

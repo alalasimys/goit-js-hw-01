@@ -4,8 +4,8 @@
  Можно положить либо снять деньги со счета.
  */
 const Transaction = {
-  DEPOSIT: "deposit",
-  WITHDRAW: "withdraw",
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
 };
 
 /*
@@ -25,11 +25,11 @@ const account = {
    */
   createTransaction(amount, type) {
     let transObj = {};
-    transObj.id = Math.random() * 10 ** 17;
-    transObj.type = type;
-    transObj.amount = amount;
+    transObj['id'] = Math.random() * 10 ** 17;
+    transObj['type'] = type;
+    transObj['amount'] = amount;
 
-    return this.transObj;
+    return transObj;
   },
 
   /*
@@ -39,8 +39,7 @@ const account = {
     после чего добавляет его в историю транзакций
    */
   deposit(amount) {
-    this.createTransaction(this.amount, Transaction.DEPOSIT);
-    this.transactions.push(this.transObj);
+    this.transactions.push(this.createTransaction(amount, Transaction.DEPOSIT));
     return (this.balance += amount);
   },
 
@@ -55,10 +54,10 @@ const account = {
    */
   withdraw(amount) {
     this.transactions.push(
-      this.createTransaction(this.amount, Transaction.WITHDRAW)
+      this.createTransaction(amount, Transaction.WITHDRAW),
     );
     if (amount > this.balance) {
-      return "Снятие невозможно, недостаточно средств";
+      return 'Снятие невозможно, недостаточно средств';
     }
     this.balance -= amount;
     return `Текущий баланс ${this.balance}`;
@@ -90,30 +89,29 @@ const account = {
     определенного типа транзакции из всей истории транзакций
    */
   getTransactionTotal(type) {
-    let total = 0;
-    for (const transaction of this.transactions) {
-      if (this.transactions.type === type) {
+    return this.transactions.reduce((total, transaction) => {
+      if (transaction.type === type) {
         total += transaction.amount;
       }
-    }
-    return total;
+      return total;
+    }, 0);
   },
 };
-console.log(account.createTransaction(5000, "deposit"));
-// console.log(account.deposit(1500));
-// console.log(account.deposit(1500));
-// console.log(account.deposit(1500));
-// console.log(account.deposit(1500));
+
+console.log(account.createTransaction(5000, Transaction.DEPOSIT));
+console.log(account.deposit(1500));
+console.log(account.deposit(1500));
+console.log(account.deposit(1500));
+console.log(account.deposit(1500));
+console.log(account.withdraw(1500));
+console.log(account.withdraw(1500));
+console.log(account.withdraw(1500));
 // console.log(account.withdraw(1500));
 // console.log(account.withdraw(1500));
 // console.log(account.withdraw(1500));
-// console.log(account.withdraw(1500));
-// console.log(account.withdraw(1500));
-// console.log(account.withdraw(1500));
-// console.log(account.getBalance());
-// console.log(account.transactions);
-// console.log(account.getTransactionDetails(1611182701828));
-// console.log(account.getTransactionDetails(1611182701828));
-// console.log(account.getTransactionTotal(Transaction.DEPOSIT));
-// console.log(account.getTransactionTotal(Transaction.WITHDRAW));
-// ! незаконченная задача
+console.log(account.getBalance());
+console.log(account.transactions);
+console.log(account.getTransactionDetails(1611182701828));
+console.log(account.getTransactionDetails(1611182701828));
+console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+console.log(account.getTransactionTotal(Transaction.WITHDRAW));
